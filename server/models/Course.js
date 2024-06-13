@@ -2,6 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Course = sequelize.define("Course", {
         kode_matkul: {
             type: DataTypes.STRING,
+            primaryKey: true,
             allowNull: false, 
             validate: {
                 notEmpty: true

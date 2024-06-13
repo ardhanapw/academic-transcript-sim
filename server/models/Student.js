@@ -2,6 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Student = sequelize.define("Student", {
         nim: {
             type: DataTypes.INTEGER,
+            primaryKey: true,
             allowNull: false, 
             validate: {
                 notEmpty: true
@@ -14,8 +15,12 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        digital_sign: {
+        ipk: {
             type: DataTypes.STRING,
+            allowNull: true
+        },
+        digital_sign: {
+            type: DataTypes.STRING(3000),
             allowNull: true
         }
     })
