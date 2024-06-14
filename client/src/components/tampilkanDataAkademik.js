@@ -125,7 +125,7 @@ const TampilkanDataAkademik = () => {
 
     useEffect(()=>{
         if(fetchStatus === true){
-            axios.get("http://localhost:8000/pilih-mahasiswa")
+            axios.get("http://localhost:8000/select-mahasiswa")
             .then((res) => {
                 console.log(res.data)
                 setListMahasiswa(res.data)
@@ -140,7 +140,7 @@ const TampilkanDataAkademik = () => {
 
     useEffect(()=>{
         if(fetchStatus === true){
-            axios.get("http://localhost:8000/semua-data-akademik")
+            axios.get("http://localhost:8000/select-all-data-akademik")
             .then((res) => {
                 console.log(res.data)
                 setListDataAkademik(res.data)
@@ -155,7 +155,7 @@ const TampilkanDataAkademik = () => {
 
     useEffect(()=>{
         if(fetchStatus === false){
-            axios.post("http://localhost:8000/tambah-ipk", {listNIM})
+            axios.post("http://localhost:8000/update-ipk", {listNIM})
             .then((res) => {
                 console.log(res.data)
             })
