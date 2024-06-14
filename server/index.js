@@ -286,7 +286,7 @@ app.post("/generate-pdf", upload.single('file'), (req, res) => {
             },
             theme: "grid"
             })
-           addNewline((20/lineSpacing)*dataAkademik.length)
+           addNewline((20/lineSpacing)*dataAkademik.length + 1)
 
            doc.text("Total jumlah SKS: " + jumlahSKS, 105, startingPosition, {align: "center"});
            addNewline(1)
@@ -297,7 +297,7 @@ app.post("/generate-pdf", upload.single('file'), (req, res) => {
            doc.text("--Begin signature--", indent, startingPosition);
            addNewline(1)
            doc.text(mhsw.digital_sign, indent, startingPosition, {maxWidth: 100, lineHeightFactor: 1.5});
-           addNewline(10)
+           addNewline(11)
            doc.text("--End signature--", indent, startingPosition);
            addNewline(1)
            doc.text("(Dr. I Gusti Bagus Baskara)", indent, startingPosition);
